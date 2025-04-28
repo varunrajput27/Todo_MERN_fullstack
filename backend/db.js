@@ -1,5 +1,12 @@
 const mongoose=require('mongoose');
- const mongURL='mongodb://127.0.0.1:27017/Todo';
+require("dotenv").config();
+
+
+//local db
+//  const mongURL='mongodb://127.0.0.1:27017/Todo';
+
+// online database
+const mongURL=process.env.DB_URL;
  
  mongoose.connect(mongURL,{
     useNewUrlParser:true,

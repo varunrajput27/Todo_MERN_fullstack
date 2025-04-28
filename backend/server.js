@@ -6,6 +6,7 @@ app.use(express.json());
 app.use(cors());
 const Person = require('./models/person')
 const Allfield = require('./models/fields')
+require("dotenv").config();
 
 //////////////////////////// registration 
 app.post('/registration', async (req, res) => {
@@ -169,13 +170,8 @@ app.put('/field/update-task', async (req, res) => {
 });
 
 
-
-
-
-
-
-
-app.listen(3000, () => {
+const PORT=process.env.PORT ||3000;
+app.listen(PORT, () => {
     console.log("server is connected using port 3000");
 
 })
