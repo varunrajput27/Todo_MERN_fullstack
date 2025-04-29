@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
 import axios from 'axios'
-require('dotenv').config();
+
 
 const Registration = () => {
     const [name, setName] = useState('');

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router';
 import axios from 'axios'
-require('dotenv').config();
+
 
 const Todoapp = () => {
     const [username, setUsername] = useState(() => localStorage.getItem('username') || '');
