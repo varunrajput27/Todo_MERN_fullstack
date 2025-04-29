@@ -80,7 +80,7 @@ const Login = () => {
         <>
             <div className='bg-zinc-950 h-screen flex justify-center items-start
 '>
-                <div className='w-96 p-6 mt-10 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative'>
+                <div className='w-96 h-140 p-6 mt-10 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative'>
 
                     {showloader && (
                         <div className='absolute inset-0 bg-black/80 rounded-2xl flex flex-col justify-center items-center'>
@@ -91,7 +91,7 @@ const Login = () => {
 
                     )}
                     < h1 className='flex justify-center text-3xl font-bold text-white'>Welcome Back</h1>
-                    <p className='text-center text-gray-400 mt-2'>Enter your credentials to access your account</p>
+                    <p className='text-center text-gray-400 mt-3'>Enter your credentials to access your account</p>
 
                     {successMessage && (
                         <div className='text-green-500 text-center font-semibold mt-5'>{successMessage}</div>
@@ -107,7 +107,7 @@ const Login = () => {
 
                     <form onSubmit={handlesbubmit}>
                         <div className='mt-5'>
-                            <label htmlFor="Username" className='block text-gray-300 text-sm'>Username</label>
+                            <label htmlFor="Username" className='block text-gray-300 text-md'>Username</label>
                             <input
                                 type="text"
                                 id='Username'
@@ -120,8 +120,8 @@ const Login = () => {
                             />
                         </div>
 
-                        <div className='mt-5'>
-                            <label htmlFor="Password" className='block text-gray-300 text-sm'>Password</label>
+                        <div className='mt-7'>
+                            <label htmlFor="Password" className='block text-gray-300 text-md'>Password</label>
                             <input
                                 type="password"
                                 id='password'
@@ -136,7 +136,7 @@ const Login = () => {
                             />
                         </div>
 
-                        <div className='mt-4 text-right text-sm text-gray-300'>
+                        <div className='mt-6 text-right text-md text-gray-300'>
                             <span
 
                                 className={`cursor-pointer hover:text-gray-500 `}
@@ -150,13 +150,13 @@ const Login = () => {
                         <button
                             type='submit'
                             id='btn'
-                            className={`mt-5 w-full py-2 text-2xl font-semibold rounded-md transition-all duration-100 bg-purple-800 text-white hover:bg-purple-950  `}
+                            className={`mt-7 w-full py-2 text-2xl font-semibold rounded-md transition-all duration-100 bg-purple-800 text-white hover:bg-purple-950  `}
                             disabled={submitting}
                         >
                             {submitting ? "submitting" : "submit"}
                         </button>
                     </form>
-                    <div className='mt-4 text-center text-base text-gray-300'>
+                    <div className='mt-6 text-center text-md text-gray-300'>
                         Don't have an account?
                         <Link to="/Registration" className='text-purple-800 ml-2 font-medium hover:text-purple-900'>Register</Link>
                     </div>

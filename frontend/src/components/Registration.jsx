@@ -81,7 +81,7 @@ const Registration = () => {
     return (
         <>
             <div className='bg-zinc-950 h-screen flex justify-center items-start'>
-                <div className='w-96 p-6 mt-7 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative'>
+                <div className='w-96 h-140 p-6 mt-10 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative'>
                     {showloader && (
                         <div className='absolute inset-0 bg-black/80 rounded-2xl flex flex-col justify-center items-center z-50'>
                             <div className=' w-16 h-16 border-4 border-dashed border-purple-800 border-t-transparent  rounded-full animate-spin'>
@@ -92,17 +92,17 @@ const Registration = () => {
                     <h1 className='text-3xl font-bold text-center text-white'>Create an Account</h1>
                     <p className='text-center text-gray-400 mt-2'>Enter your details to register</p>
                     {successmessage && (
-                        <div className='text-green-500 text-center font-semibold mt-5'>{successmessage}</div>
+                        <div className='text-green-500 text-center font-semibold mt-2.5'>{successmessage}</div>
                     )}
                     {errormessage && (
-                        <div className='text-red-500 text-center font-semibold mt-5'>{errormessage}</div>
+                        <div className='text-red-500 text-center font-semibold mt-2.5'>{errormessage}</div>
                     )}
                     {popupmessage && (
-                        <div className='text-red-500 text-center font-semibold mt-5'>{popupmessage}</div>
+                        <div className='text-red-500 text-center font-semibold mt-2.5'>{popupmessage}</div>
                     )}
                     <form onSubmit={handlesubmit} >
-                        <div className='mt-5'>
-                            <label htmlFor="Username" className='block text-gray-300 text-sm'>Name</label>
+                        <div className='mt-3'>
+                            <label htmlFor="Username" className='block text-gray-300 text-md'>Name</label>
                             <input
                                 type="text"
                                 id='name'
@@ -115,7 +115,7 @@ const Registration = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <label htmlFor="Username" className='block text-gray-300 text-sm'>Username</label>
+                            <label htmlFor="Username" className='block text-gray-300 text-md'>Username</label>
                             <input
                                 type="text"
                                 id='username'
@@ -129,7 +129,7 @@ const Registration = () => {
                         </div>
 
                         <div className='mt-5'>
-                            <label htmlFor="Password" className='block text-gray-300 text-sm'>Password</label>
+                            <label htmlFor="Password" className='block text-gray-300 text-md'>Password</label>
                             <input
                                 type="password"
                                 id='password'

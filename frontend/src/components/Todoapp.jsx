@@ -112,7 +112,7 @@ const Todoapp = () => {
 
     return (
         <>
-            <div className='bg-zinc-950 h-screen flex justify-center items-start'>
+            {/* <div className='bg-zinc-950 h-screen flex justify-center items-start'>
 
 
 
@@ -177,7 +177,7 @@ const Todoapp = () => {
 
                     </div>
 
-                    <div className='text-xl font-semibold text-center absolute bottom-2 left-35 right-35  '>
+                    <div className='text-xl font-semibold text-center absolute bottom-4 left-35 right-35  '>
                         <button className='bg-purple-700 rounded-md  text-white p-1 w-full cursor-pointer'
                             onClick={exit}>
                             Logout
@@ -189,7 +189,79 @@ const Todoapp = () => {
                 </div>
             </div>
            
-           
+            */}
+            <div className="bg-zinc-950 min-h-screen flex justify-center items-start px-4 overflow-hidden">
+  <div className="w-full max-w-md max-h-[90vh] mt-7 p-6 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative flex flex-col">
+    {showloader && (
+      <div className="absolute inset-0 bg-black/80 rounded-2xl flex flex-col justify-center items-center z-10">
+        <div className="w-16 h-16 rounded-full border-4 border-dashed border-purple-700 border-t-transparent animate-spin"></div>
+        <p className="mt-4 text-purple-400 text-lg font-semibold">Logging out...</p>
+      </div>
+    )}
+
+    <p className="text-2xl font-semibold text-purple-700 text-center mb-4">Welcome, {username}</p>
+    <h1 className="text-2xl font-semibold text-white text-center mb-3">Todo List</h1>
+
+    {/* Input Section */}
+    <div className="flex gap-2 mb-4 justify-center items-center">
+      <input
+        type="text"
+        value={data}
+        placeholder="Enter task.."
+        className="w-full text-gray-400 bg-gray-800 px-3 py-2 text-base rounded-md"
+        onKeyDown={(e) => handlekeydown(e, 'handlesubmit')}
+        onChange={(e) => setData(e.target.value)}
+      />
+      <div
+        className="text-2xl p-2 rounded-full w-10 h-10 flex items-center justify-center mt-1 bg-purple-700 cursor-pointer"
+        onClick={(e) => handlesubmit(e)}
+      >
+        <i className="fa-solid fa-plus text-white" id="add"></i>
+      </div>
+    </div>
+
+    {/* Scrollable Task List */}
+    <ul className="space-y-2 pr-1 overflow-y-auto custom-scrollbar flex-1 max-h-[50vh]">
+      {tasks.map((task, index) => (
+        <li
+          key={index}
+          className="bg-gray-800 text-gray-200 px-4 py-2 rounded-md flex justify-between items-center"
+        >
+          <span
+            className={`${task.completed ? 'line-through text-gray-500' : ''} break-words`}
+          >
+            {task.text}
+          </span>
+          <div className="flex gap-3 items-center">
+            <i
+              className={`fa-solid fa-check cursor-pointer ${
+                task.completed ? 'text-green-500' : 'text-gray-300'
+              }`}
+              onClick={() => taskComplete(index)}
+            ></i>
+            <i
+              className={`fa-solid fa-trash cursor-pointer ${
+                deletecolor === index ? 'text-red-500' : 'text-gray-300'
+              }`}
+              onClick={() => taskdelete(index)}
+            ></i>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    {/* Logout Button */}
+    <div className="mt-4">
+      <button
+        className="bg-purple-700 rounded-md text-white p-2 w-full font-semibold"
+        onClick={exit}
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+</div>
+
 
         </>
     )
