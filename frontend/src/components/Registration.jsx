@@ -34,6 +34,7 @@ const Registration = () => {
         setShowLoader(true)
         setTimeout(() => {
 
+            console.log("BACKEND URL:", import.meta.env.VITE_BACKEND_URL);
             axios.post(`${import.meta.env.VITE_BACKEND_URL}/registration`, { name, username, password })
                 .then((res) => {
                     setSuccessMessage(res.data.message)
