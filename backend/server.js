@@ -170,8 +170,8 @@ app.put('/field/update-task', async (req, res) => {
 });
 
 
-const PORT=process.env.PORT ||3000;
+const PORT=process.env.PORT ;
 app.listen(PORT, () => {
-    console.log("server is connected using port 3000");
+    console.log("server is connected on port 3000");
 
 })
