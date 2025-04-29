@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
 import axios from 'axios'
+require('dotenv').config();
 
 const Registration = () => {
     const [name, setName] = useState('');
@@ -33,7 +34,7 @@ const Registration = () => {
         setShowLoader(true)
         setTimeout(() => {
 
-            axios.post("http://localhost:3000/registration", { name, username, password })
+            axios.post(`${import.meta.env.VITE_BACKEND_URL}/registration`, { name, username, password })
                 .then((res) => {
                     setSuccessMessage(res.data.message)
                     setName('');

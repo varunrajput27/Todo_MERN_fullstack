@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router';
+require('dotenv').config();
 
 
 const Login = () => {
+    
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [popUpMessage, setPopUpMesssage] = useState('');
@@ -34,7 +36,7 @@ const Login = () => {
         }
         setShowLoader(true);
         setTimeout(() => {
-            axios.post('http://localhost:3000/', { username, password })
+            axios.post(`${import.meta.env.VITE_BACKEND_URL}/`, { username, password })
                 .then((res) => {
                     localStorage.setItem('username', username);
                     setSuccessMessage(res.data.message)

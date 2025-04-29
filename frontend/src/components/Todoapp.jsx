@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router';
 import axios from 'axios'
+require('dotenv').config();
 
 const Todoapp = () => {
     const [username, setUsername] = useState(() => localStorage.getItem('username') || '');
@@ -13,7 +14,7 @@ const Todoapp = () => {
     // to get all field automatically
     useEffect(() => {
         if (username) {
-            axios.get(`http://localhost:3000/field?username=${username}`)
+            axios.get(`${import.meta.env.VITE_BACKEND_URL}/field?username=${username}`)
                 .then(response => {
 
                     setTasks(response.data.tasks || []);
@@ -28,7 +29,7 @@ const Todoapp = () => {
     // to delete the task
     const handlesubmit = (e) => {
         if (data.trim() !== '') {
-            axios.post('http://localhost:3000/field', { username, tasks: [{ text: data, completed: false }] })
+            axios.post(`${import.meta.env.VITE_BACKEND_URL}/field`, { username, tasks: [{ text: data, completed: false }] })
                 .then(() => {
                     setTasks(prev => [...prev, { text: data, completed: false }]);
                     setData('');
@@ -52,7 +53,7 @@ const Todoapp = () => {
         setTasks(newTasks);
 
         // Send the updated task completion status to the backend
-        axios.put('http://localhost:3000/field/update-task', {
+        axios.put(`${import.meta.env.VITE_BACKEND_URL}/field/update-task`, {
             username: username,  // Pass username to identify the user
             taskText: task.text,  // Pass task text to identify the task
             completed: task.completed,  // Send the new completed status
@@ -70,7 +71,7 @@ const Todoapp = () => {
     // to delete the task
     const taskdelete = (index) => {
         const taskToDelete = tasks[index];
-        axios.delete('http://localhost:3000/field', {
+        axios.delete(`${import.meta.env.VITE_BACKEND_URL}/field`, {
             data: {
                 username: username,
                 taskText: taskToDelete.text,
