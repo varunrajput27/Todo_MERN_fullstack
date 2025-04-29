@@ -9,7 +9,7 @@ const Allfield = require('./models/fields')
 require("dotenv").config();
 
 app.use(cors({ 
-    origin: ['https://todo-frontend-umber-tau.vercel.app'],
+    origin:'https://todo-frontend-umber-tau.vercel.app',
     credentials: true
   }));
 

@@ -81,7 +81,7 @@ const Registration = () => {
     return (
         <>
             <div className='bg-zinc-950 h-screen flex justify-center items-start'>
-                <div className='w-96 h-140 p-6 mt-10 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative'>
+                <div className='w-96 h-155 p-6 mt-3 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative'>
                     {showloader && (
                         <div className='absolute inset-0 bg-black/80 rounded-2xl flex flex-col justify-center items-center z-50'>
                             <div className=' w-16 h-16 border-4 border-dashed border-purple-800 border-t-transparent  rounded-full animate-spin'>
@@ -90,7 +90,7 @@ const Registration = () => {
                         </div>
                     )}
                     <h1 className='text-3xl font-bold text-center text-white'>Create an Account</h1>
-                    <p className='text-center text-gray-400 mt-2'>Enter your details to register</p>
+                    <p className='text-center text-gray-400 mt-3'>Enter your details to register</p>
                     {successmessage && (
                         <div className='text-green-500 text-center font-semibold mt-2.5'>{successmessage}</div>
                     )}
@@ -145,14 +145,14 @@ const Registration = () => {
                         </div>
 
                         <div className='mt-4'>
-                            <p className='text-gray-300 text-sm'>
+                            <p className='text-gray-300 text-md'>
                                 <input
                                     type="checkbox"
                                     className='mr-2'
                                     checked={agree}
                                     onChange={(e) => setAgree(e.target.checked)}
                                 />
-                                I agree to the Terms of Service and Privacy Policy.
+                                I agree to the Terms of Service & Privacy Policy.
                             </p>
                         </div>
 
