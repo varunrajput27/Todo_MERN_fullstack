@@ -78,8 +78,9 @@ const Login = () => {
 
     return (
         <>
-            <div className='bg-zinc-950 h-screen flex justify-center items-center'>
-                <div className='w-96 p-6 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative'>
+            <div className='bg-zinc-950 h-screen flex justify-center items-start
+'>
+                <div className='w-96 p-6 mt-10 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative'>
 
                     {showloader && (
                         <div className='absolute inset-0 bg-black/80 rounded-2xl flex flex-col justify-center items-center'>
@@ -161,6 +162,10 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+           
+
+            
+
         </>
     )
 }

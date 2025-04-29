@@ -8,8 +8,8 @@ const Person = require('./models/person')
 const Allfield = require('./models/fields')
 require("dotenv").config();
 
-app.use(cors({
-    origin: 'https://todo-frontend-umber-tau.vercel.app', // ← yahi sahi frontend URL lagao
+app.use(cors({ 
+    origin: ['https://todo-frontend-umber-tau.vercel.app'],
     credentials: true
   }));
 
@@ -20,6 +20,7 @@ app.post('/registration', async (req, res) => {
 
     try {
         const { name, username, password } = req.body;
+        console.log("Received:", { name, username, password });
         const findusername = await Person.findOne({ username: username });
         if (findusername) {
             return res.status(409).json({ message: "username already exist" });

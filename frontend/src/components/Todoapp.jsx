@@ -112,11 +112,11 @@ const Todoapp = () => {
 
     return (
         <>
-            <div className='bg-zinc-950 h-screen flex justify-center items-center'>
+            <div className='bg-zinc-950 h-screen flex justify-center items-start'>
 
 
 
-                <div className='w-96  h-150 p-6 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative '>
+                <div className='w-96  h-150 p-6  mt-7 shadow-lg rounded-2xl bg-gray-900/50 border border-gray-800 relative '>
                     {showloader && (
                         <div className='absolute inset-0 bg-black/80 rounded-2xl flex flex-col justify-center items-center'>
                             <div className='w-16 h-16 rounded-full border-4 border-dashed border-purple-700 border-t-transparent animate-spin'>
@@ -188,6 +188,9 @@ const Todoapp = () => {
 
                 </div>
             </div>
+           
+           
+
         </>
     )
 }
