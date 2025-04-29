@@ -9,9 +9,8 @@ const Allfield = require('./models/fields')
 require("dotenv").config();
 
 app.use(cors({
-    origin: "https://todo-frontend-beta-self.vercel.app", // Aapke frontend ka Vercel URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
+    origin: 'https://todo-frontend-umber-tau.vercel.app', // ← yahi sahi frontend URL lagao
+    credentials: true
   }));
 
 
