@@ -7,7 +7,7 @@ const Person = require('./models/person')
 const Allfield = require('./models/fields')
 require("dotenv").config();
 
-const PORT=process.env.PORT;
+
 
 
 
@@ -185,7 +185,7 @@ app.put('/field/update-task', async (req, res) => {
 
 
 
-
+const PORT=process.env.PORT;
 app.listen(PORT, () => {
     console.log("server is connected on port 3000");
 
