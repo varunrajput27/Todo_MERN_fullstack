@@ -7,14 +7,9 @@ const Person = require('./models/person')
 const Allfield = require('./models/fields')
 require("dotenv").config();
 const path = require('path');
+const PORT=process.env.PORT || 3000;
 
-// Serve static files from the frontend build folder
-app.use(express.static(path.join(__dirname, 'client/dist')));
 
-// For any route not handled by the API, send back index.html (for React Router)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
-});
 
 
 app.use(cors({ 
@@ -187,7 +182,16 @@ app.put('/field/update-task', async (req, res) => {
 });
 
 
-const PORT=process.env.PORT ;
+
+
+// Serve static files from the frontend build folder
+app.use(express.static(path.join(__dirname, 'client/dist')));
+
+// For any route not handled by the API, send back index.html (for React Router)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
+});
+
 app.listen(PORT, () => {
     console.log("server is connected on port 3000");
 
