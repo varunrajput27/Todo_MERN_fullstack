@@ -6,11 +6,22 @@ app.use(express.json());
 const Person = require('./models/person')
 const Allfield = require('./models/fields')
 require("dotenv").config();
+const path = require('path');
+
+// Serve static files from the frontend build folder
+app.use(express.static(path.join(__dirname, 'client/dist')));
+
+// For any route not handled by the API, send back index.html (for React Router)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
+});
+
 
 app.use(cors({ 
     origin:'https://todo-frontend-umber-tau.vercel.app',
     credentials: true
   }));
+
 
 
 //////////////////////////// registration 
